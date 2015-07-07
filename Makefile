@@ -1,7 +1,16 @@
 
-browserify = ./node_modules/.bin/browserify
+BIN = ./node_modules/.bin
+BROWSERIFY = $(BIN)/browserify
 
-react:
-	$(browserify) --outfile ./example.bundle.js -t [ babelify --stage 0 ] --verbose --debug ./example.js
+all: example.bundle.js
 
-.PHONY: react
+%.bundle.js: %.js
+	$(BROWSERIFY) $< -t [ babelify --stage 0 ] --verbose --debug -o $@
+
+test:
+	./node_modules/karma/bin/karma start
+
+clean:
+	rm example.bundle.js
+
+.PHONY: test clean

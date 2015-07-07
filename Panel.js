@@ -16,7 +16,10 @@ class Panel extends React.Component {
    */
   static propTypes = {
     title: React.PropTypes.string,
-    rows: React.PropTypes.array
+    rows: React.PropTypes.arrayOf(React.PropTypes.shape({
+      href: React.PropTypes.string,
+      text: React.PropTypes.string
+    }))
   }
 
 
@@ -92,7 +95,7 @@ class Panel extends React.Component {
             </span>
           </h3>
           <div className="form-group has-feedback" style={form}>
-            <input type="text" className="form-control" onChange={::this.onChange} value={this.state.search} />
+            <input type="search" className="form-control" onChange={::this.onChange} value={this.state.search} />
             <span className="glyphicon glyphicon-search form-control-feedback"></span>
           </div>
         </div>
