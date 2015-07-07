@@ -69,7 +69,7 @@ class Panel extends React.Component {
 
     var rows = this.props.rows
       .filter(row =>
-        row.text.indexOf(this.state.search) !== -1
+        row.text.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
       )
       .map((row, index) =>
         <a key={index} href={row.href} className="list-group-item">

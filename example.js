@@ -14,9 +14,15 @@ class App extends React.Component {
       margin: '0 auto'
     };
 
+    var rows = [
+      {href: '#', text: 'Dog'},
+      {href: '#', text: 'Cat'},
+      {href: '#', text: 'Horse'}
+    ];
+
     return (
       <div style={style}>
-        <Panel title="awesome" badge={2} body="panel" />
+        <Panel title="awesome" rows={rows} />
       </div>
     );
   }
