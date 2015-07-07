@@ -13,4 +13,12 @@ test:
 clean:
 	rm example.bundle.js
 
-.PHONY: test clean
+ghpages:
+	git checkout gh-pages
+	make clean && make
+	git add .
+	git commit -m "update gh-pages"
+	git push
+	git checkout master
+
+.PHONY: test clean ghpages
