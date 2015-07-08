@@ -15,6 +15,7 @@ clean:
 
 ghpages:
 	git checkout gh-pages
+	git checkout master ./Panel.js ./example.js
 	make clean && make
 	git add .
 	git commit -m "update gh-pages"
