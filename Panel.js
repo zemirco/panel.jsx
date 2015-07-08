@@ -43,9 +43,15 @@ class Panel extends React.Component {
    */
   constructor(props) {
     super(props);
-    this.state = {
-      search: ''
-    };
+  }
+
+
+
+  /**
+   * Initial state
+   */
+  state = {
+    search: ''
   }
 
 
@@ -53,7 +59,7 @@ class Panel extends React.Component {
   /**
    * Handle change event from input field
    */
-  onChange(event) {
+  onChange = (event) => {
     this.setState({
       search: event.target.value
     });
@@ -95,7 +101,7 @@ class Panel extends React.Component {
             </span>
           </h3>
           <div className="form-group has-feedback" style={form}>
-            <input type="search" className="form-control" onChange={::this.onChange} value={this.state.search} />
+            <input type="search" className="form-control" onChange={this.onChange} value={this.state.search} />
             <span className="glyphicon glyphicon-search form-control-feedback"></span>
           </div>
         </div>
