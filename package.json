@@ -1,6 +1,6 @@
 {
   "name": "panel.jsx",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React Panel component",
   "main": "Panel.js",
   "scripts": {
