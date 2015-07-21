@@ -72,10 +72,6 @@ class Panel extends React.Component {
    */
   render() {
 
-    var badge = {
-      float: 'right'
-    };
-
     var rows = this.props.rows
       .filter(row =>
         row.text.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
@@ -86,21 +82,19 @@ class Panel extends React.Component {
         </a>
       );
 
-    var form = {
-      marginBottom: 0,
-      marginTop: 10
-    };
-
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
           <h3 className="panel-title">
             {this.props.title}
-            <span className="badge" style={badge}>
+            <span className="badge" style={{float: 'right'}}>
               {this.props.rows.length}
             </span>
           </h3>
-          <div className="form-group has-feedback" style={form}>
+          <div className="form-group has-feedback" style={{
+            marginBottom: 0,
+            marginTop: 10
+          }}>
             <input type="search" className="form-control" onChange={this.onChange} value={this.state.search} />
             <span className="glyphicon glyphicon-search form-control-feedback"></span>
           </div>
