@@ -1,13 +1,13 @@
 'use strict';
 
-var React = require('react');
+import React from 'react';
 
 
 
 /**
  * Panel component
  */
-class Panel extends React.Component {
+export default class Panel extends React.Component {
 
 
 
@@ -104,10 +104,3 @@ class Panel extends React.Component {
   }
 
 }
-
-
-
-/**
- * Export component
- */
-module.exports = Panel;
