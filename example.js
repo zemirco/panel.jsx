@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var Panel = require('./index');
+var Panel = require('./Panel');
 
 
 

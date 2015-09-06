@@ -16,7 +16,10 @@ export default class Panel extends React.Component {
    */
   static propTypes = {
     title: React.PropTypes.string,
-    rows: React.PropTypes.array
+    rows: React.PropTypes.arrayOf(React.PropTypes.shape({
+      href: React.PropTypes.string,
+      text: React.PropTypes.string
+    }))
   }
 
 
@@ -40,9 +43,15 @@ export default class Panel extends React.Component {
    */
   constructor(props) {
     super(props);
-    this.state = {
-      search: ''
-    };
+  }
+
+
+
+  /**
+   * Initial state
+   */
+  state = {
+    search: ''
   }
 
 
@@ -50,7 +59,7 @@ export default class Panel extends React.Component {
   /**
    * Handle change event from input field
    */
-  onChange(event) {
+  onChange = (event) => {
     this.setState({
       search: event.target.value
     });
@@ -63,10 +72,6 @@ export default class Panel extends React.Component {
    */
   render() {
 
-    var badge = {
-      float: 'right'
-    };
-
     var rows = this.props.rows
       .filter(row =>
         row.text.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
@@ -77,22 +82,20 @@ export default class Panel extends React.Component {
         </a>
       );
 
-    var form = {
-      marginBottom: 0,
-      marginTop: 10
-    };
-
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
           <h3 className="panel-title">
             {this.props.title}
-            <span className="badge" style={badge}>
+            <span className="badge" style={{float: 'right'}}>
               {this.props.rows.length}
             </span>
           </h3>
-          <div className="form-group has-feedback" style={form}>
-            <input type="text" className="form-control" onChange={::this.onChange} value={this.state.search} />
+          <div className="form-group has-feedback" style={{
+            marginBottom: 0,
+            marginTop: 10
+          }}>
+            <input type="search" className="form-control" onChange={this.onChange} value={this.state.search} />
             <span className="glyphicon glyphicon-search form-control-feedback"></span>
           </div>
         </div>

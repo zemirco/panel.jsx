@@ -1,10 +1,14 @@
 {
   "name": "panel.jsx",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "React Panel component",
-  "main": "index.js",
+  "main": "Panel.js",
   "scripts": {
     "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zemirco/panel.jsx"
   },
   "author": "Mirco Zeiss <mirco.zeiss@gmail.com>",
   "license": "MIT",
@@ -12,10 +16,28 @@
     "babel-eslint": "^3.1.23",
     "babelify": "^6.1.2",
     "browserify": "^10.2.4",
+    "browserify-istanbul": "^0.2.1",
     "eslint": "^0.24.0",
-    "eslint-plugin-react": "^2.6.4"
+    "eslint-plugin-react": "^2.6.4",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.37",
+    "karma-browserify": "^4.2.1",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "^0.4.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-spec-reporter": "0.0.19"
   },
   "peerDependencies": {
     "react": "^0.13.3"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "stage": 0
+        }
+      ]
+    ]
   }
 }
