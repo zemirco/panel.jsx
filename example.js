@@ -1,7 +1,7 @@
-'use strict';
 
-var React = require('react');
-var Panel = require('./Panel');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Panel from './Panel';
 
 
 
@@ -31,4 +31,4 @@ class App extends React.Component {
 
 
 
-React.render(<App />, document.getElementById('react'));
+ReactDOM.render(<App />, document.getElementById('react'));

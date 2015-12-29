@@ -12,8 +12,9 @@ $ npm install panel.jsx
 ## Usage
 
 ```js
-var React = require('react');
-var Panel = require('panel.jsx');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Panel from 'panel.jsx';
 
 class App extends React.Component {
 
@@ -34,7 +35,7 @@ class App extends React.Component {
 
 }
 
-React.render(<App />, document.getElementById('react'));
+ReactDOM.render(<App />, document.getElementById('react'));
 ```
 
 ## Test

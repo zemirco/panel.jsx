@@ -5,7 +5,7 @@ BROWSERIFY = $(BIN)/browserify
 all: example.bundle.js
 
 %.bundle.js: %.js
-	$(BROWSERIFY) $< -t [ babelify --stage 0 ] --verbose --debug -o $@
+	$(BROWSERIFY) $< -t [ babelify --presets [es2015 stage-0 react] ] --verbose --debug -o $@
 
 test:
 	./node_modules/karma/bin/karma start
