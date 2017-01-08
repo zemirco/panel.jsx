@@ -2,9 +2,10 @@
   "name": "panel.jsx",
   "version": "3.0.0",
   "description": "React Panel component",
-  "main": "Panel.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "build": "babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,7 @@
   "author": "Mirco Zeiss <mirco.zeiss@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-eslint": "^4.1.6",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
@@ -31,18 +33,7 @@
     "karma-spec-reporter": "0.0.23",
     "react-dom": "^0.14.3"
   },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015",
-            "stage-0",
-            "react"
-          ]
-        }
-      ]
-    ]
-  }
+  "files": [
+    "lib"
+  ]
 }
