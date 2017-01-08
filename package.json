@@ -1,6 +1,6 @@
 {
   "name": "panel.jsx",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "React Panel component",
   "main": "lib/index.js",
   "scripts": {
